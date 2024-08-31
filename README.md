@@ -1,10 +1,15 @@
 # Military Supply Chain Management Using Blockchain Technology
 
 ## Project Overview
-This project implements a dynamic, Ethereum-based decentralized application (DApp) designed to enhance the Supply Chain Operations of the Indian Army's Army Service Corps. Leveraging blockchain technology, the system aims to improve transparency, efficiency, and security in military supply chain management.
+This project implements a dynamic, Ethereum-based decentralized application (DApp) 
+designed to enhance the Supply Chain Operations of the Indian Army's Army Service 
+Corps. Leveraging blockchain technology, the system aims to improve transparency, 
+efficiency, and security in military supply chain management.
+
 ## Supply Chain Roles
 
 The project simulates the entire supply chain process through four distinct roles:
+
 1. **Units**: 
    - Represent the ground-level military units
    - Generate initial supply requests
@@ -25,7 +30,8 @@ The project simulates the entire supply chain process through four distinct role
    - Receive production orders from ASC
    - Fulfill supply requests and update the chain
 
-Each role interacts with the blockchain to ensure transparent and secure tracking of all supply chain activities.
+Each role interacts with the blockchain to ensure transparent and secure tracking 
+of all supply chain activities.
 
 ### Process Flow
 ![Project Process Flow](https://github.com/user-attachments/assets/9c5022e8-bf39-4f5b-80cd-175c509d8a0f)
@@ -38,13 +44,14 @@ Each role interacts with the blockchain to ensure transparent and secure trackin
 - MetaMask integration for Ethereum transactions
 
 ## User Interface and Functionality
-> **Note**: Only few screenshots are provided to make a breif understanding of the project features and its working.
+> **Note**: Only a few screenshots are provided to give a brief understanding of 
+> the project features and its working.
 
 ### Authentication Flow
 
 #### Login Page
 Users can log in with their credentials to access the system.
-![Login Page](https://github.com/user-attachments/assets/64db13ae-54c7-46f2-b348-5303ecdb3c70)
+![Login Page](https://github.com/user-attachments/assets/d24196fd-503a-408f-b5b3-0b77dd1f1295)
 
 #### OTP Verification
 After entering valid login credentials, users must verify their identity through OTP.
@@ -53,7 +60,8 @@ After entering valid login credentials, users must verify their identity through
 ### Request Generation (Units)
 
 #### Request Page
-Units can generate supply requests by filling in details and initiating a blockchain transaction.
+Units can generate supply requests by filling in details and initiating a 
+blockchain transaction.
 ![Request Page](https://github.com/user-attachments/assets/cd391c29-5fa2-4ca6-b06f-064733d1775a)
 
 #### Operation Success Confirmation
@@ -121,7 +129,8 @@ Displays all transactions with necessary details for tracking and auditing.
    ```
    
 ## Demo
-For a comprehensive walkthrough of the project, check out our [Project Demo Video](https://youtu.be/oY0Wv6KKJI0?si=MKdOgtdjKDKtH8re).
+For a comprehensive walkthrough of the project, check out our 
+[Project Demo Video](https://youtu.be/oY0Wv6KKJI0?si=MKdOgtdjKDKtH8re).
 
 ---
 
