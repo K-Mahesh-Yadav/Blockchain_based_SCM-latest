@@ -51,10 +51,12 @@ of all supply chain activities.
 
 #### Login Page
 Users can log in with their credentials to access the system.
+
 ![Login Page](https://github.com/user-attachments/assets/d24196fd-503a-408f-b5b3-0b77dd1f1295)
 
 #### OTP Verification
 After entering valid login credentials, users must verify their identity through OTP.
+
 ![OTP Verification](https://github.com/user-attachments/assets/2c7fd427-7fce-4f76-a7fc-fa2cfa3be2fc)
 
 ### Request Generation (Units)
@@ -62,34 +64,41 @@ After entering valid login credentials, users must verify their identity through
 #### Request Page
 Units can generate supply requests by filling in details and initiating a 
 blockchain transaction.
+
 ![Request Page](https://github.com/user-attachments/assets/cd391c29-5fa2-4ca6-b06f-064733d1775a)
 
 #### Operation Success Confirmation
 Confirmation of successful request generation and blockchain transaction.
+
 ![Operation Success](https://github.com/user-attachments/assets/eee7bf98-e0d9-489b-aedb-d95931bba8b3)
 
 ### Blockchain Integration
 
 #### MetaMask Wallet
 MetaMask is used for managing Ethereum transactions and accounts.
+
 ![MetaMask Wallet](https://github.com/user-attachments/assets/9e59f4b1-bc99-438e-ace3-8bb6838ff1bb)
 
 #### Ganache - Local Blockchain
 Ganache provides a local Ethereum blockchain for development and testing.
+
 ![Ganache](https://github.com/user-attachments/assets/9a98459e-60a2-4cc4-a2a2-87f05acd02db)
 
 ### Common Features for All Roles
 
 #### Received Requests Page
 Displays requests received from other units, with options to accept or reject.
+
 ![Received Requests](https://github.com/user-attachments/assets/48c39355-fc4c-4931-b769-936d61bb62f2)
 
 #### All Requests Page
 Shows all requests posted and received by the current role.
+
 ![All Requests](https://github.com/user-attachments/assets/c9bfb50d-6876-4b5b-97b9-a299ddf5db02)
 
 #### Transactions Page
 Displays all transactions with necessary details for tracking and auditing.
+
 ![Transactions Page](https://github.com/user-attachments/assets/f3474206-3c7a-43d8-9c0a-f49b8daa5574)
 
 ## Technology Stack
