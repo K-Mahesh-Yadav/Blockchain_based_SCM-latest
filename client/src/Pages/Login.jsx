@@ -7,8 +7,6 @@
 // import axios from "axios";
 // import Cookies from "js-cookie";
 
-
-
 // const Login = () => {
 //   // const { account } = useContext(context);
 //   const [userInput, setUserInput] = useState('');
@@ -181,8 +179,6 @@
 
 // export default Login;
 
-
-
 // import { ToastContainer, toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 
@@ -191,7 +187,6 @@
 // import placeholderImage from '../Components/img/PROCESS FLOW.png';
 // import axios from "axios";
 // import Cookies from "js-cookie";
-
 
 // import firebase from'./Firebase'
 
@@ -248,7 +243,7 @@
 //         console.log("SMS not sent");
 //       });
 //   };
-  
+
 //   const onSubmitOTP = (e) => {
 //     e.preventDefault();
 //     const code = otp;
@@ -290,7 +285,7 @@
 //       const { data } = await axios.get(`http://localhost:4000/Login?param1=${userInput}&param2=${password}`, {
 //         withCredentials: true
 //       });
-  
+
 //       if (data.status === "Success") {
 //         if (data.result.Mobile) {
 //           // console.log(data.result.Mobile)
@@ -319,20 +314,20 @@
 //     }
 //   };
 
-  // useEffect(() => {
-  //   async function cookie() {
-  //     if (Cookies.get('jwt')) {
-  //       try {
-  //         let { data } = await axios.get('http://localhost:4000/', {
-  //           withCredentials: true
-  //         });
-  //         navigating(data);
-  //       } catch (err) {
-  //       }
-  //     }
-  //   }
-  //   cookie();
-  // }, []);
+// useEffect(() => {
+//   async function cookie() {
+//     if (Cookies.get('jwt')) {
+//       try {
+//         let { data } = await axios.get('http://localhost:4000/', {
+//           withCredentials: true
+//         });
+//         navigating(data);
+//       } catch (err) {
+//       }
+//     }
+//   }
+//   cookie();
+// }, []);
 
 //   return (
 //     <section className="vh-100 login-section">
@@ -355,7 +350,7 @@
 //           data-toggle="modal"
 //           data-target="#exampleModalLong"
 //           style={{ marginTop: '40px' }}
-          
+
 //         >
 //           Process Flow
 //         </button>
@@ -452,21 +447,19 @@
 
 // export default Login;
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import placeholderImage from '../Components/img/PROCESS FLOW.png';
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import placeholderImage from "../Components/img/PROCESS FLOW.png";
 import axios from "axios";
 import Cookies from "js-cookie";
 
-
 const Login = () => {
-  const [userInput, setUserInput] = useState('');
-  const [password, setPassword] = useState('');
-  const [loginError, setLoginError] = useState('');
+  const [userInput, setUserInput] = useState("");
+  const [password, setPassword] = useState("");
+  const [loginError, setLoginError] = useState("");
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {
@@ -479,34 +472,54 @@ const Login = () => {
 
   function navigating(data) {
     if (data.result.Role === "ADST") {
-      navigate("/" + data.result.Name + "/ADSTdashboard", { state: { "userData": data.result.Name, "account": data.result.Account.toLowerCase() } });
-    }
-    else if (data.result.Role === "DDST") {
-      navigate("/" + data.result.Name + "/DDSTDashboard", { state: { "userData": data.result.Name, "account": data.result.Account.toLowerCase() } });
-    }
-    else if (data.result.Role === "DGST") {
-      navigate("/" + data.result.Name + "/DgstDashboard", { state: { "userData": data.result.Name, "account": data.result.Account.toLowerCase() } });
-    }
-    else {
-      navigate("/" + data.result.Name + "/Manufacturer", { state: { "userData": data.result.Name, "account": data.result.Account.toLowerCase() } });
+      navigate("/" + data.result.Name + "/ADSTdashboard", {
+        state: {
+          userData: data.result.Name,
+          account: data.result.Account.toLowerCase(),
+        },
+      });
+    } else if (data.result.Role === "DDST") {
+      navigate("/" + data.result.Name + "/DDSTDashboard", {
+        state: {
+          userData: data.result.Name,
+          account: data.result.Account.toLowerCase(),
+        },
+      });
+    } else if (data.result.Role === "DGST") {
+      navigate("/" + data.result.Name + "/DgstDashboard", {
+        state: {
+          userData: data.result.Name,
+          account: data.result.Account.toLowerCase(),
+        },
+      });
+    } else {
+      navigate("/" + data.result.Name + "/Manufacturer", {
+        state: {
+          userData: data.result.Name,
+          account: data.result.Account.toLowerCase(),
+        },
+      });
     }
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.get(`http://localhost:4000/Login?param1=${userInput}&param2=${password}`, {
-        withCredentials: true
-      });
+      const { data } = await axios.get(
+        `http://localhost:4000/Login?param1=${userInput}&param2=${password}`,
+        {
+          withCredentials: true,
+        }
+      );
 
       if (data.status === "Success") {
-        localStorage.setItem("OTP",false);
-          navigate("/otp", { state: { "mobileNumber": data.result.Mobile  ,"Data": data }});
+        // localStorage.setItem("OTP",false);
+        //   navigate("/otp", { state: { "mobileNumber": data.result.Mobile  ,"Data": data }});
 
-          // navigating(data);
+        navigating(data);
       } else {
-        setLoginError('Invalid Credentials');
-        toast.info('Login Error!', {
+        setLoginError("Invalid Credentials");
+        toast.info("Login Error!", {
           position: "bottom-right",
           autoClose: 2000,
           hideProgressBar: false,
@@ -524,16 +537,15 @@ const Login = () => {
 
   useEffect(() => {
     async function cookie() {
-      if (Cookies.get('jwt')&&localStorage.getItem("OTP")) {
+      if (Cookies.get("jwt") && localStorage.getItem("OTP")) {
         try {
           // console.log("hii");
-          let { data } = await axios.get('http://localhost:4000/', {
-            withCredentials: true
+          let { data } = await axios.get("http://localhost:4000/", {
+            withCredentials: true,
           });
           // console.log(data);
           navigating(data);
-        } catch (err) {
-        }
+        } catch (err) {}
       }
     }
     cookie();
@@ -559,7 +571,7 @@ const Login = () => {
           className="btn btn-primary"
           data-toggle="modal"
           data-target="#exampleModalLong"
-          style={{ marginTop: '40px' }}
+          style={{ marginTop: "40px" }}
         >
           Process Flow
         </button>
@@ -574,16 +586,34 @@ const Login = () => {
           <div className="modal-dialog modal-lg" role="document">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLongTitle">Process Flow</h5>
-                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                <h5 className="modal-title" id="exampleModalLongTitle">
+                  Process Flow
+                </h5>
+                <button
+                  type="button"
+                  className="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div className="modal-body">
-                <img src={placeholderImage} width="100%" height="100%" alt="Process Flow" />
+                <img
+                  src={placeholderImage}
+                  width="100%"
+                  height="100%"
+                  alt="Process Flow"
+                />
               </div>
               <div className="modal-footer">
-                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
               </div>
             </div>
           </div>
@@ -618,7 +648,11 @@ const Login = () => {
                       required
                     />
                   </div>
-                  {loginError && <div className="alert alert-danger" role='alert'>{loginError}</div>}
+                  {loginError && (
+                    <div className="alert alert-danger" role="alert">
+                      {loginError}
+                    </div>
+                  )}
                   <button type="submit" className="btn btn-primary btn-login">
                     Login
                   </button>
